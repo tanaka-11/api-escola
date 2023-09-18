@@ -33,6 +33,7 @@ app.delete("/alunos:id", (req, res) => {
 
 // Executando o servidor
 const porta = 8080;
+
 app.listen(porta, () => {
     console.log(`Servidor NodeJS rodando na porta ${porta}`);
 });
