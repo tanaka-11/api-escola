@@ -6,12 +6,12 @@ app.get("/", (req, res) => {
     res.send(`Raíz da API NodeJS + Express + MySQL`)
 });
 
-// Exibindo TODOS os alunos
+// Exibindo dados de TODOS os alunos
 app.get("/alunos", (req, res) => {
     res.send(`Exibindo os dados de TODOS os alunos`);
 });
 
-// Exibindo UM aluno
+// Exibindo dados de UM aluno
 app.get("/alunos:id", (req, res) => {
     res.send(`Exibindo os dados de UM aluno`);
 });
