@@ -1,40 +1,38 @@
-// Importando o pacote
-import express from "express"; 
+import express from "express";
 
-// Armazenando o express numa variavel para facilitar na hora da aplicação.
-const app = express(); 
+const app = express();
 
+app.get("/", (req, res) => {
+    res.send(`Raíz da API NodeJS + Express + MySQL`)
+});
+
+// Exibindo TODOS os alunos
+app.get("/alunos", (req, res) => {
+    res.send(`Exibindo os dados de TODOS os alunos`);
+});
+
+// Exibindo UM aluno
+app.get("/alunos:id", (req, res) => {
+    res.send(`Exibindo os dados de UM aluno`);
+});
+
+// INSERINDO alunos
+app.post("/alunos", (req, res) => {
+    res.send(`Inserindo alunos`);
+});
+
+// ATUALIZANDO dados de UM aluno
+app.patch("/alunos:id", (req, res) => {
+    res.send(`Atualizando alunos`);
+});
+
+// DELETANDO aluno
+app.delete("/alunos:id", (req, res) => {
+    res.send(`Deletando UM aluno`);
+});
+
+// Executando o servidor
 const porta = 8080;
-
-// Criando as rotas
-
-// Raiz da aplicação 
-app.get( '/',(req, res) =>{
-    res.send(`Raiz da API NODEJs + Express + MySQL`);
-});
-
-app.get('/alunos',(req,res) =>{
-    res.send(`Exibindo os dados de todos os Alunos`);
-}); // para exibir os dados de todos os alunos
-
-app.get('/alunos/:id',(req, res) =>{
-    res.send(`Exibindo os dados de um aluno`);
-}); // para exibir os de um aluno
-
-app.post('/alunos',(req,res)=>{
-    res.send(`Inserindo os dados de um aluno`);
-}); // para inserir um aluno
-
-app.patch('/alunos/:id', (req, res)=>{
-    res.send(`Atualizando os dados de um aluno`);
-}) // para atualizar um aluno
-
-app.delete('/alunos/:id',(req, res)=>{
-    res.send(`Para deletar um aluno`);
-});
-
-// Executando 
-
-app.listen(porta, ()=>{
-    console.log(`Servidor NodeJs rodando na porta ${porta}`);
+app.listen(porta, () => {
+    console.log(`Servidor NodeJS rodando na porta ${porta}`);
 });
