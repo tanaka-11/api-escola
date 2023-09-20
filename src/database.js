@@ -9,4 +9,11 @@ const conexao = mysql2.createConnection({
     database: 'apiescola'
 });
 
-//
+// Executando a conexão com o comando -> conexao.connect();
+conexao.connect(erro => {
+    if (erro) {
+        console.error(`Erro de conexão: ${erro.message}`)
+    } else {
+        console.log(`Database conectaco com sucesso!`);
+    }
+})
