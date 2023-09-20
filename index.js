@@ -1,6 +1,6 @@
 // Importando arquivos
 import express from "express";
-import {exibirAluno} from "./src/aluno.js";
+import {exibirAluno, inserirAluno} from "./src/aluno.js";
 
 // Adicionando constantes para guardar a porta do servidor e o API Express
 const porta = 8080;
@@ -31,7 +31,13 @@ app.get('/alunos/:id', (req, res) => {
 
 // POST: Endpoint para inserir novos alunos
 app.post("/alunos", (req, res) => {
-    res.send(`Inserindo alunos`);
+    // res.send(`Inserindo alunos`);
+    
+    // Criado constante para armazenar os dados (req.body) - requisição (res) - resposta
+    const novoAluno = req.body;
+
+    // Executando o comando 
+    inserirAluno(novoAluno, res)
 });
 
 // PUT:  Endpoint para atualizar TODOS os dados de UM aluno

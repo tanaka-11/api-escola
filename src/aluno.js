@@ -31,7 +31,7 @@ function inserirAluno(aluno, res){
     // O (SET ?) entende que vão inserir dados sem ter que passar o VALUES (versão mais simplificada).
     const sql = "INSERT INTO alunos SET ?";
 
-    conexao.query(sql, inserirAluno, (erro) => {
+    conexao.query(sql, aluno, (erro) => {
         if (erro) {
             res.status(400).json(erro.code);
         } else {
