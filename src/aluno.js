@@ -25,6 +25,8 @@ function exibirAluno(res) {
         }
     });
 }
-
 export {exibirAluno};
+
+
+
 // 2 - 

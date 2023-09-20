@@ -1,14 +1,27 @@
+// Importando arquivos
 import express from "express";
+import {exibirAluno} from "./src/aluno.js";
 
+// Adicionando constantes para guardar a porta do servidor e o API Express
+const porta = 8080;
 const app = express();
 
+// Adicionando suporte ao formato json
+app.use(express.json());
+
+// Adicionando suporte para dados vindo de formulários
+app.use(express.urlencoded({extended:true}));
+
+// Criando as rotas
+// Raiz
 app.get("/", (req, res) => {
     res.send(`Raíz da API NodeJS + Express + MySQL`)
 });
 
 // Exibindo dados de TODOS os alunos
 app.get("/alunos", (req, res) => {
-    res.send(`Exibindo os dados de TODOS os alunos`);
+    // res.send(`Exibindo os dados de TODOS os alunos`);
+    exibirAluno(res);
 });
 
 // Exibindo dados de UM aluno
@@ -37,8 +50,6 @@ app.delete("/alunos/:id", (req, res) => {
 });
 
 // Executando o servidor
-const porta = 8080;
-
 app.listen(porta, () => {
     console.log(`Servidor NodeJS rodando na porta ${porta}`);
 });

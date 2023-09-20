@@ -4,7 +4,7 @@ import mysql2 from 'mysql2';
 // Guardando os dados da conexão do DATABASE numa constante.
 const conexao = mysql2.createConnection({
     host: 'localhost',
-    usuario: 'root',
+    user: 'root',
     password: '',
     database: 'apiescola'
 });
