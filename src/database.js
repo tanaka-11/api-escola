@@ -14,7 +14,7 @@ conexao.connect(erro => {
     if (erro) {
         console.error(`Erro de conexão: ${erro.message}`)
     } else {
-        console.log(`Database conectaco com sucesso!`);
+        console.log(`Database conectado com sucesso!`);
     }
 });
 
