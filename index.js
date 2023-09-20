@@ -16,17 +16,22 @@ app.get("/alunos:id", (req, res) => {
     res.send(`Exibindo os dados de UM aluno`);
 });
 
-// INSERINDO alunos
+// POST: Endpoint para inserir novos alunos
 app.post("/alunos", (req, res) => {
     res.send(`Inserindo alunos`);
 });
 
-// ATUALIZANDO dados de UM aluno
+// PUT:  Endpoint para atualizar TODOS os dados de UM aluno
+app.put('/alunos', (req,res) => {
+    res.send(`Atualizar TODOS dados de UM aluno.`);
+})
+
+// PATCH:  Endpoint para atualizar todos/alguns dados de UM aluno
 app.patch("/alunos:id", (req, res) => {
-    res.send(`Atualizando alunos`);
+    res.send(`Atualizar alguns ou todos os dados de UM aluno.`);
 });
 
-// DELETANDO aluno
+// DELETE:  Endpoint para excluir alunos
 app.delete("/alunos:id", (req, res) => {
     res.send(`Deletando UM aluno`);
 });
