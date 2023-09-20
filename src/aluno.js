@@ -12,7 +12,7 @@ function exibirAluno(res) {
     conexao.query(sql, (erro, resultados) => {
         // Verificando se existe conteúdo: 
         if (resultados.length === 0) {
-            // (erro 204 - Sem Conteúdo) e passando o .end() para encerrar a execução *IMPORTANTE TRABALHAR COM STATUS
+            // (httpstatus 204 - Sem Conteúdo) e passando o .end() para encerrar a execução *IMPORTANTE TRABALHAR COM STATUS
             res.status(204).end();
             return;
         }
@@ -25,8 +25,19 @@ function exibirAluno(res) {
         }
     });
 }
-export {exibirAluno};
 
+// 2 - Inserindo alunos no DATABASE (INSERT INTO)
+function inserirAluno(aluno, res){
+    // O (SET ?) entende que vão inserir dados sem ter que passar o VALUES (versão mais simplificada).
+    const sql = "INSERT INTO alunos SET ?";
 
+    conexao.query(sql, inserirAluno, (erro) => {
+        if (erro) {
+            res.status(400).json(erro.code);
+        } else {
+            res.status(201).json({"Status" : "Aluno inserido com sucesso!"})
+        }
+    });
+}
 
-// 2 - 
+export {exibirAluno, inserirAluno};
