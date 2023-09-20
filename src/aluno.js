@@ -1,9 +1,8 @@
-// Importando nossa conexao ao bando de dados passando onde ele está.
+// Importando nossa conexao ao banco de dados.
 import conexao from './database.js';
 
 // Fazendo CRUD pelo NodeJS
-
-// 1 - Lendo e exibindo todos alunos (SELECT).
+// 1 - Lendo e exibindo dados de todos alunos (SELECT).
 function exibirAluno(res) {
     // Comando SQL
     const sql = "SELECT * FROM alunos ORDER BY nomeAluno";

@@ -33,7 +33,7 @@ app.get('/alunos/:id', (req, res) => {
 app.post("/alunos", (req, res) => {
     // res.send(`Inserindo alunos`);
     
-    // Criado constante para armazenar os dados (req.body) - requisição (res) - resposta
+    // Criado constante para armazenar os dados (req) = requisição, (res) = resposta
     const novoAluno = req.body;
 
     // Executando o comando 
