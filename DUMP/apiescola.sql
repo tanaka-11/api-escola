@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Set-2023 às 17:02
+-- Tempo de geração: 25-Set-2023 às 16:19
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -42,9 +42,11 @@ CREATE TABLE `alunos` (
 
 INSERT INTO `alunos` (`id`, `nomeAluno`, `primeiraNota`, `segundaNota`) VALUES
 (1, 'Marina Tanaka', 10.00, 10.00),
-(2, 'Beatriz Kogici', 5.00, 5.00),
+(2, 'Beatriz Kogici', 9.00, 10.00),
 (3, 'Luis Fernando', 10.00, 8.75),
-(4, 'Mariana Koki', 5.75, 2.75);
+(4, 'Mariana Koki', 7.00, 2.75),
+(7, 'Roberto Garcia', 10.00, 7.00),
+(8, 'Eliane Tanaka', 10.00, 10.00);
 
 --
 -- Índices para tabelas despejadas
@@ -64,7 +66,7 @@ ALTER TABLE `alunos`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
