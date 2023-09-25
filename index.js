@@ -1,6 +1,6 @@
 // Importando arquivos
 import express from "express";
-import {exibirAluno, inserirAluno} from "./src/aluno.js";
+import {exibirAluno, inserirAluno, exibirUmAluno} from "./src/aluno.js";
 
 // Adicionando constantes para guardar a porta do servidor e o API Express
 const porta = 8080;
@@ -26,7 +26,13 @@ app.get("/alunos", (req, res) => {
 
 // Exibindo dados de UM aluno
 app.get('/alunos/:id', (req, res) => {
-    res.send(`Dados de UM aluno`);
+    // res.send(`Dados de UM aluno`);
+
+    // Passando uma requisão que tenha como parametro o id e guardando os dados numa constante.
+    const id = parseInt(req.params.id);
+
+    // Passando os parametros de id e res na função
+    exibirUmAluno(id,res);
 });
 
 // POST: Endpoint para inserir novos alunos

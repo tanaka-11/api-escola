@@ -27,7 +27,7 @@ function exibirAluno(res) {
 
 // 2 - Inserindo alunos no DATABASE (INSERT INTO)
 function inserirAluno(aluno, res){
-    // O (SET ?) entende que vão inserir dados sem ter que passar o VALUES (versão mais simplificada).
+    // O (?) entende que vão inserir dados sem ter que passar o VALUES (versão mais simplificada).
     const sql = "INSERT INTO alunos SET ?";
 
     conexao.query(sql, aluno, (erro) => {
@@ -39,4 +39,29 @@ function inserirAluno(aluno, res){
     });
 }
 
-export {exibirAluno, inserirAluno};
+// 3 - Exibindo dados de UM aluno
+function exibirUmAluno(id, res) {
+    // Passando novamente o (?) como forma de passar um valor
+    const sql = "SELECT * FROM alunos WHERE id = ?";
+    
+    // Conectando passando o parametro do id do aluno.
+    conexao.query(sql, id, (erro, resultados) => {
+        if(resultados === 0){
+            // Passando mais uma vez a verificação para ver se existe conteudo
+            res.status(204).end();
+            // return = (die). Fazer a aplicação parar se apresentar erro
+            return;
+        }
+
+        // Passando if/else para sucesso e erro via res.status
+        if(erro){
+            res.status(400).json(erro.code);
+        } else {
+            res.status(200).json(resultados);
+        }
+    }); 
+}
+
+
+// Exportando as funções criadas
+export {exibirAluno, inserirAluno, exibirUmAluno};
