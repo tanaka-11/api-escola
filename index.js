@@ -3,7 +3,8 @@ import express from "express";
 import {exibirAluno, inserirAluno, exibirUmAluno, atualizarAluno, excluirAluno} from "./src/aluno.js";
 
 // Adicionando constantes para guardar a porta do servidor e o API Express
-const porta = 8080;
+// usando o comando coringa process.env.PORT para a aplicação rodar no servidor ou na porta escrita
+const porta = process.env.PORT || 3306;
 const app = express();
 
 // Adicionando suporte ao formato json

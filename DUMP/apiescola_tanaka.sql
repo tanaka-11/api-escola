@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Set-2023 às 16:19
+-- Tempo de geração: 25-Set-2023 às 16:36
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `apiescola`
+-- Banco de dados: `apiescola_tanaka`
 --
-CREATE DATABASE IF NOT EXISTS `apiescola` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `apiescola`;
+CREATE DATABASE IF NOT EXISTS `apiescola_tanaka` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `apiescola_tanaka`;
 
 -- --------------------------------------------------------
 
