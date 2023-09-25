@@ -66,6 +66,7 @@ function exibirUmAluno(id, res) {
 function atualizarAluno(id, aluno, res){
     // Passando entre colchetes pela ordem na linha abaixo (set ?) e dps (where id ?)
     const sql = "UPDATE alunos SET ? WHERE id = ?";
+    // Passando o aluno e o id entre colchetes por serem 2 parametros que temos que passar
     conexao.query(sql, [aluno , id],(erro, resultados) => {
         if(erro){
             res.status(400).json(erro.code);
@@ -79,6 +80,18 @@ function atualizarAluno(id, aluno, res){
     });
 }
 
+// 5 - Deletando dados do aluno
+function excluirAluno (id, res){
+    const sql = "DELETE FROM alunos WHERE id = ?"
+    conexao.query(sql, id, (erro, resultados) => {
+        if(erro){
+            res.status(400).json(erro.code);
+        } else {
+            res.status(200).json({"Status" : "Aluno excluído com sucesso", id});
+        }
+    });
+}
+
 
 // Exportando as funções criadas
-export {exibirAluno, inserirAluno, exibirUmAluno, atualizarAluno};
+export {exibirAluno, inserirAluno, exibirUmAluno, atualizarAluno, excluirAluno};
