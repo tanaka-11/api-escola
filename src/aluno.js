@@ -62,6 +62,19 @@ function exibirUmAluno(id, res) {
     }); 
 }
 
+// 4 - Atualizando todos/alguns dados do aluno
+function atualizarAluno(id, aluno, res){
+    // Passando entre colchetes pela ordem na linha abaixo (set ?) e dps (where id ?)
+    const sql = "UPDATE alunos SET ? WHERE id = ?";
+    conexao.query(sql, [aluno , id],(erro, resultados) => {
+        if(erro){
+            res.status(400).json(erro.code);
+        } else {
+            res.status(200).json({"Status" : "Aluno atualizado com sucesso!"});
+        }
+    });
+}
+
 
 // Exportando as funções criadas
-export {exibirAluno, inserirAluno, exibirUmAluno};
+export {exibirAluno, inserirAluno, exibirUmAluno, atualizarAluno};

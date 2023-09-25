@@ -1,6 +1,6 @@
 // Importando arquivos
 import express from "express";
-import {exibirAluno, inserirAluno, exibirUmAluno} from "./src/aluno.js";
+import {exibirAluno, inserirAluno, exibirUmAluno, atualizarAluno} from "./src/aluno.js";
 
 // Adicionando constantes para guardar a porta do servidor e o API Express
 const porta = 8080;
@@ -53,7 +53,10 @@ app.put('/alunos', (req,res) => {
 
 // PATCH:  Endpoint para atualizar todos/alguns dados de UM aluno
 app.patch("/alunos/:id", (req, res) => {
-    res.send(`Atualizar alguns ou todos os dados de UM aluno.`);
+    // res.send(`Atualizar alguns ou todos os dados de UM aluno.`);
+    const id = parseInt(req.params.id);
+    const aluno = req.body;
+    atualizarAluno(id, aluno, res);
 });
 
 // DELETE:  Endpoint para excluir alunos
