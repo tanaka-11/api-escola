@@ -70,7 +70,11 @@ function atualizarAluno(id, aluno, res){
         if(erro){
             res.status(400).json(erro.code);
         } else {
-            res.status(200).json({"Status" : "Aluno atualizado com sucesso!"});
+            //1ª versão passando mensagem generica
+            // res.status(200).json({"Status" : "Aluno atualizado com sucesso!"});
+
+            //2ª versão passando o aluno com "spread operator (...aluno)" e o id de quem foi atualizado
+            res.status(200).json({...aluno, id});
         }
     });
 }
