@@ -1,5 +1,6 @@
-// Importando arquivos
+// Importando arquivos npm e nossas funções
 import express from "express";
+import cors from "cors";
 import {exibirAluno, inserirAluno, exibirUmAluno, atualizarAluno, excluirAluno} from "./src/aluno.js";
 
 // Adicionando constantes para guardar a porta do servidor e o API Express
@@ -12,6 +13,9 @@ app.use(express.json());
 
 // Adicionando suporte para dados vindo de formulários
 app.use(express.urlencoded({extended:true}));
+
+// Permitindo acesso aos arquivos da API
+app.use(cors())
 
 // Criando as rotas
 // Raiz
