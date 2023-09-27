@@ -16,7 +16,8 @@ app.use(express.urlencoded({extended:true}));
 // Criando as rotas
 // Raiz
 app.get("/", (req, res) => {
-    res.send(`Raíz da API NodeJS + Express + MySQL`)
+    // res.send(`Raíz da API NodeJS + Express + MySQL`)
+    res.redirect(`https://documenter.getpostman.com/view/29885695/2s9YJZ34co`);
 });
 
 // Exibindo dados de TODOS os alunos

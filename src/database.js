@@ -2,13 +2,13 @@
 import mysql2 from 'mysql2';
 
 // Guardando os dados da conexão do DATABASE numa constante via LOCALHOST - XAMPP.
-/*const conexao = mysql2.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'apiescola'
-});
-*/
+// const conexao = mysql2.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'apiescola'
+// });
+
 
 // Guardando os dados da conexão do DATABASE numa constante via DB4FREE.NET.
 const conexao = mysql2.createConnection({
